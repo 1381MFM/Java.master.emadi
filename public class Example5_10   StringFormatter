@@ -1,0 +1,48 @@
+public class StringFormatter 
+{
+    // Pad out s with spaces after it.
+    public static String leftAdjust (String s, int width){
+        final int stringLength = s.length();
+        if (stringLength >= width) {
+            // This covers the case when width is negative, too.
+            return s;   
+        }
+        else
+            return spaces (width-stringLength).
+                insert (0, s) . toString();
+    }
+    // Pad out s with spaces before it.
+    public static String rightAdjust (String s, int width)
+    {
+        final int stringLength = s.length();
+        if (stringLength >= width) {
+            // This covers the case when width is negative, too.
+            return s;   
+        }
+        else
+            return spaces (width-stringLength) .append(s).toString();
+    }
+    //*********************
+    public static String center (String s, int width) 
+    {
+        final int stringLength = s.length();
+        if (stringLength >= width) 
+        {
+            // This covers the case when width is negative, too.
+            return s;
+        }
+    }
+    //Return a StringBuffer full of spaces.
+    private static StringBuffer spaces(int numSpaces)
+    {
+        if (numSpaces <= 0)
+            return new StringBuffer();
+        else
+        {
+            StringBuffer spaces = new StringBuffer();
+            for(int i= 0; i < numSpaces; i++)
+                spaces.append(' ');
+            return spaces;
+        }
+    }
+}
